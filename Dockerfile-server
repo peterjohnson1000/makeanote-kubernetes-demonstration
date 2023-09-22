@@ -1,0 +1,12 @@
+FROM node:14
+
+WORKDIR /home/app
+
+COPY Server/ ./Server/
+COPY package*.json ./
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD [ "npm","run","serve:api"]
